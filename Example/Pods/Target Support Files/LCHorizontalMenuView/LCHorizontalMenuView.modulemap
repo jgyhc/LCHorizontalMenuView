@@ -1,0 +1,6 @@
+framework module LCHorizontalMenuView {
+  umbrella header "LCHorizontalMenuView-umbrella.h"
+
+  export *
+  module * { export * }
+}

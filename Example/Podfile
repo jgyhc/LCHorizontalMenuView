@@ -4,7 +4,8 @@ platform :ios, '8.0'
 
 target 'LCHorizontalMenuView_Example' do
   pod 'LCHorizontalMenuView', :path => '../'
-
+  pod 'SDWebImage'
+  pod 'LCPageControl'
   target 'LCHorizontalMenuView_Tests' do
     inherit! :search_paths
 

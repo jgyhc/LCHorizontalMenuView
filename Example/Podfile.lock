@@ -1,0 +1,34 @@
+PODS:
+  - LCHorizontalMenuView (0.1.0):
+    - Masonry
+  - LCPageControl (0.1.1):
+    - Masonry
+  - Masonry (1.1.0)
+  - SDWebImage (5.8.0):
+    - SDWebImage/Core (= 5.8.0)
+  - SDWebImage/Core (5.8.0)
+
+DEPENDENCIES:
+  - LCHorizontalMenuView (from `../`)
+  - LCPageControl
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - LCPageControl
+    - Masonry
+    - SDWebImage
+
+EXTERNAL SOURCES:
+  LCHorizontalMenuView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LCHorizontalMenuView: 2dbe215a50baf336f55ad2ddbe8ea02145198000
+  LCPageControl: 0e193fd553ef72a6555ea1843e0695bb806f0be3
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+
+PODFILE CHECKSUM: a91f1f4ec36f453166ba79dba15dacf64b0700cd
+
+COCOAPODS: 1.9.1

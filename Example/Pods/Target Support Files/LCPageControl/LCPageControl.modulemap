@@ -1,0 +1,6 @@
+framework module LCPageControl {
+  umbrella header "LCPageControl-umbrella.h"
+
+  export *
+  module * { export * }
+}
