@@ -29,5 +29,5 @@ jgyhc, jgyhc@foxmail.com
 LCHorizontalMenuView is available under the MIT license. See the LICENSE file for more info.
 
 ## 效果
-[效果](/menu.gif)
+![效果](/menu.gif)
 
