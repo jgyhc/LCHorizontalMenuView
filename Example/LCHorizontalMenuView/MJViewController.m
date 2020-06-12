@@ -33,6 +33,7 @@
 }
 
 - (void)dataAssignmentWithMenuView:(LCHorizontalMenuView *)menuView index:(NSInteger)index cell:(LCHorizontalMenuBaseCollectionViewCell *)cell {
+    //这里可以赋值
     cell.label.text = @"测试";
     [cell.imageView setBackgroundColor:[UIColor colorWithRed:251/255.0 green:236/255.0 blue:192/255.0 alpha:1.0]];
 //    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:@"https://upload.jianshu.io/users/upload_avatars/2259045/5d2e817c-f862-4c4f-b8c0-83ce96e8331b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/240/h/240"] placeholderImage:nil];
@@ -56,7 +57,7 @@
 }
 
 - (NSInteger)numOfRowsPerPageInHorizontalMenuView:(LCHorizontalMenuView *)horizontalMenuView {
-    return 1;
+    return 2;
 }
 
 /// 设置每页的列数 默认 4
