@@ -29,6 +29,10 @@
     [self.collectionView registerClass:NSClassFromString(@"LCHorizontalMenuBaseCollectionViewCell") forCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell"];
 }
 
+- (void)reloadData {
+    [self.collectionView reloadData];
+}
+
 - (NSInteger)numberOfPages {
     NSInteger count = [self.dataSource numberOfIndexInHorizontalMenuView:self];
     NSInteger maxCountPerPage = self.collectionViewLayout.rowCount * self.collectionViewLayout.columCount;
