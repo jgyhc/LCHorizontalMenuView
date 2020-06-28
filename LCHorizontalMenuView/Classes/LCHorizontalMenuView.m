@@ -86,9 +86,11 @@
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell" forIndexPath:indexPath];
+    UICollectionViewCell *cell;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(menuView:cellForItemAtIndex:)]) {
         cell = [self.dataSource menuView:self cellForItemAtIndex:indexPath.row];
+    }else {
+        cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell" forIndexPath:indexPath];
     }
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(dataAssignmentWithMenuView:index:cell:)]) {
         [self.dataSource dataAssignmentWithMenuView:self index:indexPath.row cell:cell];

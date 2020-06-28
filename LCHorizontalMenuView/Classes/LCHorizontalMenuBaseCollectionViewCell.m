@@ -30,7 +30,7 @@
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.mas_equalTo(self.mas_centerX);
         make.top.mas_equalTo(self.mas_top).mas_offset(15);
-        make.size.mas_equalTo(CGSizeMake(40, 40));
+        make.size.mas_equalTo(CGSizeMake(50, 50));
     }];
 
     [self addSubview:self.label];
