@@ -15,7 +15,17 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol LCHorizontalMenuViewDelegate <NSObject>
 
 @optional
+//点击item的回调
 - (void)didSelectItemWithMenuView:(LCHorizontalMenuView *)menuView index:(NSInteger)index;
+
+///拖动的回调
+- (void)horizontalMenuView:(LCHorizontalMenuView *)horizontalMenuView WillEndDraggingWithVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset;
+
+/// 更新页码回调
+/// @param menuView 当前控件
+/// @param currentPage 当前页码
+- (void)pageUpdateWithMenuView:(LCHorizontalMenuView *)menuView pageControl:(UIView *)pageControl currentPage:(NSInteger)currentPage;
+
 
 @end
 
@@ -37,16 +47,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param horizontalMenuView horizontalMenuView 当前控件
 - (NSInteger)numOfColumnsPerPageInHorizontalMenuView:(LCHorizontalMenuView *)horizontalMenuView;
 
-/// 如需自定义cell ** 自定义需要先调用 registerCellWithMenuView:collectionView: 注册cell**
-/// @param menuView 当前控件
-/// @param collectionView 当前控件使用的UICollectionView
-/// @param index 当前下标
-- (UICollectionViewCell *)menuView:(LCHorizontalMenuView *)menuView collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
-/// 注册自定义cell用
-/// @param menuView 当前控件
-/// @param collectionView 当前控件使用的UICollectionView
-- (void)registerCellWithMenuView:(LCHorizontalMenuView *)menuView collectionView:(UICollectionView *)collectionView;
 
 
 /// 赋值用的回调方法
@@ -63,20 +64,24 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param menuView 当前控件
 - (UIView *)customPageControlMenuView:(LCHorizontalMenuView *)menuView numberOfPages:(NSInteger)numberOfPages;
 
-
 /// 如果默认使用UIPageControl 这里可以设置一下UIPageControl的样式
 /// @param menuView 当前控件
 /// @param pageControl UIPageControl
 - (void)pageControlInitMenuView:(LCHorizontalMenuView *)menuView pageControl:(UIPageControl *)pageControl;
 
 
-/// 更新页码回调
+/// 如需自定义cell ** 自定义需要先调用 registerCellWithMenuView:collectionView: 注册cell**
 /// @param menuView 当前控件
-/// @param currentPage 当前页码
-- (void)pageUpdateWithMenuView:(LCHorizontalMenuView *)menuView pageControl:(UIView *)pageControl currentPage:(NSInteger)currentPage;
+/// @param collectionView 当前控件使用的UICollectionView
+/// @param indexPath 当前下标
+- (UICollectionViewCell *)menuView:(LCHorizontalMenuView *)menuView collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
-///拖动的回调
-- (void)horizontalMenuView:(LCHorizontalMenuView *)horizontalMenuView WillEndDraggingWithVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset;
+/// 注册自定义cell用
+/// @param menuView 当前控件
+/// @param collectionView 当前控件使用的UICollectionView
+- (void)registerCellWithMenuView:(LCHorizontalMenuView *)menuView collectionView:(UICollectionView *)collectionView;
+
+
 @end
 
 @interface LCHorizontalMenuView : UIView

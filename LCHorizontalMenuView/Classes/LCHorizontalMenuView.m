@@ -111,15 +111,15 @@
         UIPageControl *pageControl = (UIPageControl *)_pageControl;
         pageControl.currentPage = currentPage;
     }
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(pageUpdateWithMenuView:pageControl:currentPage:)]) {
-        [self.dataSource pageUpdateWithMenuView:self pageControl:_pageControl currentPage:currentPage];
+    if (self.delegate && [self.dataSource respondsToSelector:@selector(pageUpdateWithMenuView:pageControl:currentPage:)]) {
+        [self.delegate pageUpdateWithMenuView:self pageControl:_pageControl currentPage:currentPage];
     }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
 //    NSInteger currentPage = targetContentOffset->x / self.frame.size.width;
-    if ([self.dataSource respondsToSelector:@selector(horizontalMenuView:WillEndDraggingWithVelocity:targetContentOffset:)]) {
-        [self.dataSource horizontalMenuView:self WillEndDraggingWithVelocity:velocity targetContentOffset:targetContentOffset];
+    if ([self.delegate respondsToSelector:@selector(horizontalMenuView:WillEndDraggingWithVelocity:targetContentOffset:)]) {
+        [self.delegate horizontalMenuView:self WillEndDraggingWithVelocity:velocity targetContentOffset:targetContentOffset];
     }
 }
 

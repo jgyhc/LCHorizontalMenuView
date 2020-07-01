@@ -72,6 +72,15 @@
     NSInteger index = 0;
     NSInteger itemWidth = self.collectionView.frame.size.width /  self.columCount;
     NSInteger itemHeight = self.collectionView.frame.size.height / self.rowCount;
+    if (pageCount == 1) {
+        NSInteger currentRows = count / self.columCount;
+        NSInteger remainder = count % self.columCount;
+        if (remainder != 0) {
+            currentRows ++;
+        }
+        itemHeight = self.collectionView.frame.size.height / currentRows;
+    }
+    
     
    //具体计算每个布局属性到底是多少
     for (NSInteger i = 0; i < pageCount; i ++) {
