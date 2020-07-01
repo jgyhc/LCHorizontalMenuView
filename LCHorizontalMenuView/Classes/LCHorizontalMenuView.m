@@ -87,8 +87,8 @@
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell;
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(menuView:cellForItemAtIndex:)]) {
-        cell = [self.dataSource menuView:self cellForItemAtIndex:indexPath.row];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(menuView:collectionView:cellForItemAtIndexPath:)]) {
+        cell = [self.dataSource menuView:self collectionView:collectionView cellForItemAtIndexPath:indexPath];
     }else {
         cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell" forIndexPath:indexPath];
     }

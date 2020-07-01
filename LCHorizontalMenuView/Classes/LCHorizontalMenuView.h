@@ -39,9 +39,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 如需自定义cell ** 自定义需要先调用 registerCellWithMenuView:collectionView: 注册cell**
 /// @param menuView 当前控件
+/// @param collectionView 当前控件使用的UICollectionView
 /// @param index 当前下标
-- (UICollectionViewCell *)menuView:(LCHorizontalMenuView *)menuView cellForItemAtIndex:(NSInteger)index;
-
+- (UICollectionViewCell *)menuView:(LCHorizontalMenuView *)menuView collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 /// 注册自定义cell用
 /// @param menuView 当前控件
