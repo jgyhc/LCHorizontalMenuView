@@ -27,6 +27,9 @@
         make.edges.mas_equalTo(UIEdgeInsetsZero);
     }];
     [self.collectionView registerClass:NSClassFromString(@"LCHorizontalMenuBaseCollectionViewCell") forCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell"];
+    if (self.pageControl) {
+        [self insertSubview:self.pageControl aboveSubview:self.collectionView];
+    }
 }
 
 - (void)reloadData {
@@ -67,7 +70,7 @@
         }
         [self addSubview:self.pageControl];
         [self.pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.bottom.mas_equalTo(self.mas_bottom).mas_offset(-5);
+            make.bottom.mas_equalTo(self.mas_bottom).mas_offset(0);
             make.centerX.mas_equalTo(self.mas_centerX);
             make.height.mas_equalTo(20);
         }];
