@@ -21,7 +21,7 @@
 
 @implementation LCHorizontalMenuView
 
-- (void)initSubViews {
+- (void)initCollectionView {
     [self addSubview:self.collectionView];
     UIEdgeInsets insets = UIEdgeInsetsZero;
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(contentMarginMenuView:)]) {
@@ -31,13 +31,19 @@
         make.edges.mas_equalTo(insets);
     }];
     [self.collectionView registerClass:NSClassFromString(@"LCHorizontalMenuBaseCollectionViewCell") forCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell"];
-    if (self.pageControl) {
-        [self insertSubview:self.pageControl aboveSubview:self.collectionView];
-    }
+    [self.collectionView reloadData];
 }
 
 - (void)reloadData {
     [self.collectionView reloadData];
+    [self initPageControl];
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(contentMarginMenuView:)]) {
+        insets = [self.dataSource contentMarginMenuView:self];
+    }
+    [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(insets);
+    }];
 }
 
 - (NSInteger)numberOfPages {
@@ -49,18 +55,15 @@
    return ((count % maxCountPerPage) == 0) ? (count / maxCountPerPage) : (int)(count * 1.0 / maxCountPerPage) + 1;
 }
 
-
-- (void)setDataSource:(id<LCHorizontalMenuViewDataSource>)dataSource {
-    _dataSource = dataSource;
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(registerCellWithMenuView:collectionView:)]) {
-        [self.dataSource registerCellWithMenuView:self collectionView:self.collectionView];
-    }
+- (void)initPageControl {
     BOOL isShowPageControl = NO;
     NSInteger numberOfPages = [self numberOfPages];
     if (self.dataSource && [self.dataSource respondsToSelector:@selector(isShowPageControl:numberOfPages:)]) {
         isShowPageControl = [self.dataSource isShowPageControl:self numberOfPages:numberOfPages];
     }
     if (isShowPageControl) {
+        [self.pageControl removeFromSuperview];
+        _pageControl = nil;
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(customPageControlMenuView:numberOfPages:)]) {
             _pageControl = [self.dataSource customPageControlMenuView:self numberOfPages:numberOfPages];
         }else {
@@ -79,13 +82,17 @@
             make.height.mas_equalTo(20);
         }];
     }else {
-        if (self.pageControl) {
-            [self.pageControl removeFromSuperview];
-            self.pageControl = nil;
-        }
+        [self.pageControl removeFromSuperview];
     }
-    [self.collectionView reloadData];
-    [self initSubViews];
+}
+
+- (void)setDataSource:(id<LCHorizontalMenuViewDataSource>)dataSource {
+    _dataSource = dataSource;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(registerCellWithMenuView:collectionView:)]) {
+        [self.dataSource registerCellWithMenuView:self collectionView:self.collectionView];
+    }
+    [self initCollectionView];
+    [self initPageControl];
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
