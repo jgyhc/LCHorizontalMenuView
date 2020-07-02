@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+/// 数据源
 @protocol LCHorizontalMenuViewDataSource <NSObject>
 
 
@@ -48,6 +49,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSInteger)numOfColumnsPerPageInHorizontalMenuView:(LCHorizontalMenuView *)horizontalMenuView;
 
 
+/// 因为默认会根据高宽撑起整个界面 所以这里加一个边距
+/// @param menuView 当前控件
+- (UIEdgeInsets)contentMarginMenuView:(LCHorizontalMenuView *)menuView;
 
 
 /// 赋值用的回调方法
@@ -82,15 +86,19 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)registerCellWithMenuView:(LCHorizontalMenuView *)menuView collectionView:(UICollectionView *)collectionView;
 
 
+
 @end
 
 @interface LCHorizontalMenuView : UIView
-/** 界面默认会填充高度 */
+/** 界面默认会根据设置的高度自动填充 */
 @property (nonatomic, weak) id<LCHorizontalMenuViewDataSource> dataSource;
 
 @property (nonatomic, weak) id<LCHorizontalMenuViewDelegate> delegate;
 
+@property (nonatomic, strong, readonly) UICollectionView * collectionView;
+
 - (void)reloadData;
+
 
 @end
 

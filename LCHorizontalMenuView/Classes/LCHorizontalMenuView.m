@@ -23,8 +23,12 @@
 
 - (void)initSubViews {
     [self addSubview:self.collectionView];
+    UIEdgeInsets insets = UIEdgeInsetsZero;
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(contentMarginMenuView:)]) {
+        insets = [self.dataSource contentMarginMenuView:self];
+    }
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsZero);
+        make.edges.mas_equalTo(insets);
     }];
     [self.collectionView registerClass:NSClassFromString(@"LCHorizontalMenuBaseCollectionViewCell") forCellWithReuseIdentifier:@"LCHorizontalMenuBaseCollectionViewCell"];
     if (self.pageControl) {
@@ -114,14 +118,14 @@
         UIPageControl *pageControl = (UIPageControl *)_pageControl;
         pageControl.currentPage = currentPage;
     }
-    if (self.delegate && [self.dataSource respondsToSelector:@selector(pageUpdateWithMenuView:pageControl:currentPage:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pageUpdateWithMenuView:pageControl:currentPage:)]) {
         [self.delegate pageUpdateWithMenuView:self pageControl:_pageControl currentPage:currentPage];
     }
 }
 
 - (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
 //    NSInteger currentPage = targetContentOffset->x / self.frame.size.width;
-    if ([self.delegate respondsToSelector:@selector(horizontalMenuView:WillEndDraggingWithVelocity:targetContentOffset:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(horizontalMenuView:WillEndDraggingWithVelocity:targetContentOffset:)]) {
         [self.delegate horizontalMenuView:self WillEndDraggingWithVelocity:velocity targetContentOffset:targetContentOffset];
     }
 }

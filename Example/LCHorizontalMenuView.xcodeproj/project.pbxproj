@@ -22,6 +22,13 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7E1B6B6D24AD703A00985AFC /* LCCustomCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B6B6C24AD703A00985AFC /* LCCustomCellViewController.m */; };
+		7E1B6B7124AD70F000985AFC /* LCCustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B6B6F24AD70F000985AFC /* LCCustomCollectionViewCell.m */; };
+		7E1B6B7224AD70F000985AFC /* LCCustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B6B7024AD70F000985AFC /* LCCustomCollectionViewCell.xib */; };
+		7E1B6B7424AD717000985AFC /* Resource.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E1B6B7324AD717000985AFC /* Resource.xcassets */; };
+		7E1B6B7724AD72C300985AFC /* LCCustomPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B6B7624AD72C300985AFC /* LCCustomPageControlViewController.m */; };
+		7E1B6B7A24AD73DE00985AFC /* LCSystemPageControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B6B7924AD73DE00985AFC /* LCSystemPageControlViewController.m */; };
+		7E1B6B7D24AD74F800985AFC /* LCSetMarginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E1B6B7C24AD74F800985AFC /* LCSetMarginViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		C492D4390DD16BDF69EE8A6F /* Pods_LCHorizontalMenuView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EF632D0B2F054A0EEA72C8D /* Pods_LCHorizontalMenuView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +70,18 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76B62D42336712AC6AFBC3DE /* LCHorizontalMenuView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LCHorizontalMenuView.podspec; path = ../LCHorizontalMenuView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7E1B6B6B24AD703A00985AFC /* LCCustomCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCustomCellViewController.h; sourceTree = "<group>"; };
+		7E1B6B6C24AD703A00985AFC /* LCCustomCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCustomCellViewController.m; sourceTree = "<group>"; };
+		7E1B6B6E24AD70F000985AFC /* LCCustomCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCustomCollectionViewCell.h; sourceTree = "<group>"; };
+		7E1B6B6F24AD70F000985AFC /* LCCustomCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCustomCollectionViewCell.m; sourceTree = "<group>"; };
+		7E1B6B7024AD70F000985AFC /* LCCustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LCCustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		7E1B6B7324AD717000985AFC /* Resource.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Resource.xcassets; sourceTree = "<group>"; };
+		7E1B6B7524AD72C300985AFC /* LCCustomPageControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCCustomPageControlViewController.h; sourceTree = "<group>"; };
+		7E1B6B7624AD72C300985AFC /* LCCustomPageControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCCustomPageControlViewController.m; sourceTree = "<group>"; };
+		7E1B6B7824AD73DE00985AFC /* LCSystemPageControlViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCSystemPageControlViewController.h; sourceTree = "<group>"; };
+		7E1B6B7924AD73DE00985AFC /* LCSystemPageControlViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCSystemPageControlViewController.m; sourceTree = "<group>"; };
+		7E1B6B7B24AD74F800985AFC /* LCSetMarginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCSetMarginViewController.h; sourceTree = "<group>"; };
+		7E1B6B7C24AD74F800985AFC /* LCSetMarginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCSetMarginViewController.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A1227371A6335DF1824969A0 /* Pods-LCHorizontalMenuView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCHorizontalMenuView_Example.debug.xcconfig"; path = "Target Support Files/Pods-LCHorizontalMenuView_Example/Pods-LCHorizontalMenuView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D21542959F2631182FBA0482 /* Pods-LCHorizontalMenuView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LCHorizontalMenuView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LCHorizontalMenuView_Tests/Pods-LCHorizontalMenuView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,9 +156,21 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* MJViewController.h */,
 				6003F5A6195388D20070C39A /* MJViewController.m */,
+				7E1B6B7B24AD74F800985AFC /* LCSetMarginViewController.h */,
+				7E1B6B7C24AD74F800985AFC /* LCSetMarginViewController.m */,
+				7E1B6B7824AD73DE00985AFC /* LCSystemPageControlViewController.h */,
+				7E1B6B7924AD73DE00985AFC /* LCSystemPageControlViewController.m */,
+				7E1B6B7524AD72C300985AFC /* LCCustomPageControlViewController.h */,
+				7E1B6B7624AD72C300985AFC /* LCCustomPageControlViewController.m */,
+				7E1B6B6B24AD703A00985AFC /* LCCustomCellViewController.h */,
+				7E1B6B6C24AD703A00985AFC /* LCCustomCellViewController.m */,
+				7E1B6B6E24AD70F000985AFC /* LCCustomCollectionViewCell.h */,
+				7E1B6B6F24AD70F000985AFC /* LCCustomCollectionViewCell.m */,
+				7E1B6B7024AD70F000985AFC /* LCCustomCollectionViewCell.xib */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				7E1B6B7324AD717000985AFC /* Resource.xcassets */,
 			);
 			name = "Example for LCHorizontalMenuView";
 			path = LCHorizontalMenuView;
@@ -283,7 +314,9 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
+				7E1B6B7224AD70F000985AFC /* LCCustomCollectionViewCell.xib in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				7E1B6B7424AD717000985AFC /* Resource.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,9 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E1B6B6D24AD703A00985AFC /* LCCustomCellViewController.m in Sources */,
+				7E1B6B7A24AD73DE00985AFC /* LCSystemPageControlViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MJAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
+				7E1B6B7124AD70F000985AFC /* LCCustomCollectionViewCell.m in Sources */,
+				7E1B6B7D24AD74F800985AFC /* LCSetMarginViewController.m in Sources */,
+				7E1B6B7724AD72C300985AFC /* LCCustomPageControlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
