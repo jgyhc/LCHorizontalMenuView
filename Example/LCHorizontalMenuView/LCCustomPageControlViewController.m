@@ -35,7 +35,7 @@
     [cell.imageView setBackgroundColor:[UIColor colorWithRed:251/255.0 green:236/255.0 blue:192/255.0 alpha:1.0]];
 }
 
-- (BOOL)isShowPageControl:(LCHorizontalMenuView *)menuView {
+- (BOOL)isShowPageControl:(LCHorizontalMenuView *)menuView numberOfPages:(NSInteger)numberOfPages {
     return YES;
 }
 

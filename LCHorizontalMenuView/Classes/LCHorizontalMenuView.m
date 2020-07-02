@@ -56,11 +56,11 @@
         [self.dataSource registerCellWithMenuView:self collectionView:self.collectionView];
     }
     BOOL isShowPageControl = NO;
-    if (self.dataSource && [self.dataSource respondsToSelector:@selector(isShowPageControl:)]) {
-        isShowPageControl = [self.dataSource isShowPageControl:self];
+    NSInteger numberOfPages = [self numberOfPages];
+    if (self.dataSource && [self.dataSource respondsToSelector:@selector(isShowPageControl:numberOfPages:)]) {
+        isShowPageControl = [self.dataSource isShowPageControl:self numberOfPages:numberOfPages];
     }
     if (isShowPageControl) {
-        NSInteger numberOfPages = [self numberOfPages];
         if (self.dataSource && [self.dataSource respondsToSelector:@selector(customPageControlMenuView:numberOfPages:)]) {
             _pageControl = [self.dataSource customPageControlMenuView:self numberOfPages:numberOfPages];
         }else {

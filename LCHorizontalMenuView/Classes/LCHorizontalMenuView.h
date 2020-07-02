@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 是否展示页码控制器
 /// @param menuView 当前控件
-- (BOOL)isShowPageControl:(LCHorizontalMenuView *)menuView;
+- (BOOL)isShowPageControl:(LCHorizontalMenuView *)menuView numberOfPages:(NSInteger)numberOfPages;
 
 /// 自定义页码控制器
 /// @param menuView 当前控件

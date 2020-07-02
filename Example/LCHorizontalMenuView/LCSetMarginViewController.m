@@ -45,7 +45,7 @@
     return UIEdgeInsetsMake(0, 0, 20, 0);//这里为了让pageContrl位置 靠下一点
 }
 
-- (BOOL)isShowPageControl:(LCHorizontalMenuView *)menuView {
+- (BOOL)isShowPageControl:(LCHorizontalMenuView *)menuView numberOfPages:(NSInteger)numberOfPages {
     return YES;
 }
 
